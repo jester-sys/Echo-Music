@@ -313,6 +313,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Streiche im Vollbildtext nach links oder rechts im Bereich des Künstlers und Songtitels, um den Song zu wechseln</string>
     <string name="lyrics_thumbnail_play_pause">Wiedergabe/Pause auf dem Vorschaubild anzeigen</string>
     <string name="lyrics_thumbnail_play_pause_desc">Überlagere das Vorschaubild des Songs im Vollbildtext mit einer Wiedergabe/Pause-Schaltfläche</string>
+    <string name="picker_not_available">Die Dokumentenauswahl ist auf diesem Gerät nicht verfügbar. Es wird das Standard-Exportverzeichnis der App verwendet.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

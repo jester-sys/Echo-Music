@@ -313,6 +313,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Laulusõnade täisekraanil pühkige esitaja ja loo pealkirja osas vasakule või paremale, et lugu vahetada</string>
     <string name="lyrics_thumbnail_play_pause">Näita esitamist/pausi pisipildil</string>
     <string name="lyrics_thumbnail_play_pause_desc">Näita laulusõnade täisekraanil loo pisipildil esitamise/pausi nupu ülekatet</string>
+    <string name="picker_not_available">Dokumendivalija pole selles seadmes saadaval. Kasutatakse rakenduse vaikimisi ekspordikataloogi.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

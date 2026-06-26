@@ -322,6 +322,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Přejetím doleva nebo doprava v části s umělcem a názvem skladby v režimu celé obrazovky změníte skladbu</string>
     <string name="lyrics_thumbnail_play_pause">Zobrazit přehrát/pozastavit na náhledu</string>
     <string name="lyrics_thumbnail_play_pause_desc">Zobrazit tlačítko přehrát/pozastavit na náhledu skladby v režimu celé obrazovky s texty</string>
+    <string name="picker_not_available">Výběr dokumentů není na tomto zařízení k dispozici. Používá se výchozí adresář pro export aplikace.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

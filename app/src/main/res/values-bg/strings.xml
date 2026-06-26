@@ -313,6 +313,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Плъзнете наляво или надясно в секцията с изпълнител и име на песен в текста на цял екран, за да смените песента</string>
     <string name="lyrics_thumbnail_play_pause">Покажи бутона за пускане/пауза върху миниатюрата</string>
     <string name="lyrics_thumbnail_play_pause_desc">Покажи наслагване на бутон за пускане/пауза върху миниатюрата на песента в текста на цял екран</string>
+    <string name="picker_not_available">Изборът на документи не е наличен на това устройство. Използва се директорията за експорт по подразбиране на приложението.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

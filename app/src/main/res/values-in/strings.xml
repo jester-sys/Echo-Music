@@ -304,6 +304,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Geser ke kiri atau kanan di bagian artis dan nama lagu dalam lirik layar penuh untuk mengganti lagu</string>
     <string name="lyrics_thumbnail_play_pause">Tampilkan putar/jeda pada thumbnail</string>
     <string name="lyrics_thumbnail_play_pause_desc">Tampilkan tombol putar/jeda yang melayang di atas thumbnail lagu dalam lirik layar penuh</string>
+    <string name="picker_not_available">Pemilih dokumen tidak tersedia di perangkat ini. Menggunakan direktori ekspor default aplikasi.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

@@ -322,6 +322,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Deslize para a esquerda ou direita na secção do artista e nome da música em letras de ecrã inteiro para mudar de música</string>
     <string name="lyrics_thumbnail_play_pause">Mostrar reproduzir/pausa na miniatura</string>
     <string name="lyrics_thumbnail_play_pause_desc">Mostrar uma sobreposição do botão reproduzir/pausa na miniatura da música em letras de ecrã inteiro</string>
+    <string name="picker_not_available">O seletor de documentos não está disponível neste dispositivo. Usando o diretório de exportação padrão do aplicativo.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

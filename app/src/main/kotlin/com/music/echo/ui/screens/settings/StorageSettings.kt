@@ -20,6 +20,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import android.widget.Toast
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
@@ -63,9 +64,12 @@ import kotlinx.coroutines.launch
 import okio.ByteString.Companion.encodeUtf8
 import kotlin.math.roundToInt
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.net.toUri
 import iad1tya.echo.music.constants.ExportDirectoryUriKey
+import timber.log.Timber
 
 @OptIn(ExperimentalCoilApi::class, ExperimentalMaterial3Api::class, DelicateCoilApi::class)
 @Composable
@@ -107,11 +111,49 @@ highlightKey: String? = null) {
                 onExportDirectoryUriChange(uri.toString())
             }
         }
+
+    val isPickerSupported = remember(context) {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
+        context.packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null
+            .also { Timber.d("OPEN_DOCUMENT_TREE supported: $it") }
+    }
+
+    val pickerNotAvailableMsg = stringResource(R.string.picker_not_available)
+
+    val launchExportPicker: () -> Unit = remember(
+        isPickerSupported,
+        exportDirectoryLauncher,
+        onExportDirectoryUriChange
+    ) {
+        {
+            if (isPickerSupported) {
+                try {
+                    exportDirectoryLauncher.launch(null)
+                } catch (e: android.content.ActivityNotFoundException) {
+                    Timber.e(e, "Document picker launch failed despite resolveActivity check")
+                    val fallbackDir = context.getExternalFilesDir(null)
+                    if (fallbackDir != null) {
+                        onExportDirectoryUriChange(fallbackDir.toUri().toString())
+                    }
+                    Toast.makeText(context, pickerNotAvailableMsg, Toast.LENGTH_LONG).show()
+                }
+            } else {
+                Timber.w("OPEN_DOCUMENT_TREE not supported on this device, using fallback")
+                val fallbackDir = context.getExternalFilesDir(null)
+                if (fallbackDir != null) {
+                    onExportDirectoryUriChange(fallbackDir.toUri().toString())
+                }
+                Toast.makeText(context, pickerNotAvailableMsg, Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
     var exportPickerAutoOpened by remember { mutableStateOf(false) }
     LaunchedEffect(autoOpenExportPicker) {
         if (autoOpenExportPicker && !exportPickerAutoOpened) {
             exportPickerAutoOpened = true
-            exportDirectoryLauncher.launch(null)
+            Timber.d("Auto-opening export picker, autoOpenExportPicker=$autoOpenExportPicker")
+            launchExportPicker()
         }
     }
 
@@ -332,20 +374,19 @@ highlightKey: String? = null) {
                     }
                 ),
                 Material3SettingsItem(
-    isHighlighted = (highlightKey == stringResource(R.string.export_directory)),
+                    isHighlighted = (highlightKey == stringResource(R.string.export_directory)),
                     icon = painterResource(R.drawable.folder_managed),
                     title = { Text(stringResource(R.string.export_directory)) },
                     description = {
                         Text(
-                            text =
-                                if (exportDirectoryUri.isBlank()) {
-                                    stringResource(R.string.not_set)
-                                } else {
-                                    exportDirectoryUri
-                                }
+                            text = if (exportDirectoryUri.isBlank()) {
+                                stringResource(R.string.not_set)
+                            } else {
+                                exportDirectoryUri
+                            }
                         )
                     },
-                    onClick = { exportDirectoryLauncher.launch(null) }
+                    onClick = { launchExportPicker() }
                 )
             )
         )

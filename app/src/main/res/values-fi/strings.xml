@@ -313,6 +313,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Pyyhkäise vasemmalle tai oikealle artistin ja kappaleen nimen kohdalla koko näytön sanoituksissa vaihtaaksesi kappaletta</string>
     <string name="lyrics_thumbnail_play_pause">Näytä toisto/keskeytys -painike esikatselukuvassa</string>
     <string name="lyrics_thumbnail_play_pause_desc">Näytä toisto/keskeytys -painike kappaleen esikatselukuvan päällä koko näytön sanoituksissa</string>
+    <string name="picker_not_available">Asiakirjavalitsin ei ole käytettävissä tässä laitteessa. Käytetään sovelluksen oletusvientihakemistoa.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

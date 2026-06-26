@@ -321,6 +321,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Prijeđite prstom lijevo ili desno u dijelu izvođača i naziva pjesme na cijelom ekranu teksta da promijenite pjesmu</string>
     <string name="lyrics_thumbnail_play_pause">Prikaži dugme za pokretanje/pauzu na sličici</string>
     <string name="lyrics_thumbnail_play_pause_desc">Prikaži preklopno dugme za pokretanje/pauzu na sličici pjesme na cijelom ekranu teksta</string>
+    <string name="picker_not_available">Odabir dokumenata nije dostupan na ovom uređaju. Koristiće se podrazumijevani direktorij za izvoz aplikacije.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

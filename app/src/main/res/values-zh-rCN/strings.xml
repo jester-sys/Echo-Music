@@ -304,6 +304,7 @@
     <string name="lyrics_swipe_to_change_song_desc">在全屏歌词中的艺术家和歌曲名称区域左右滑动，即可切换歌曲</string>
     <string name="lyrics_thumbnail_play_pause">在缩略图上显示播放/暂停</string>
     <string name="lyrics_thumbnail_play_pause_desc">在全屏歌词的歌曲缩略图上显示播放/暂停按钮覆盖层</string>
+    <string name="picker_not_available">此设备不支持文档选择器。将使用应用默认的导出目录。</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">

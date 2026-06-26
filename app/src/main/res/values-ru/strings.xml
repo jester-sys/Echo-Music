@@ -331,6 +331,7 @@
     <string name="lyrics_swipe_to_change_song_desc">Смахните влево или вправо по области с именем исполнителя и названием песни в полноэкранном тексте, чтобы сменить трек</string>
     <string name="lyrics_thumbnail_play_pause">Показывать кнопку «Воспроизвести/Пауза» на миниатюре</string>
     <string name="lyrics_thumbnail_play_pause_desc">Показывать наложение кнопки воспроизведения/паузы поверх миниатюры трека в полноэкранном тексте песни</string>
+    <string name="picker_not_available">Выбор документов недоступен на этом устройстве. Используется каталог экспорта приложения по умолчанию.</string>
 
     <!-- Plurals -->
     <plurals name="n_apk_found">
