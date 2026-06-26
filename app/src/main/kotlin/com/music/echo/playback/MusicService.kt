@@ -3409,7 +3409,7 @@ class MusicService :
                                     title = dbSong.song.title,
                                     artists = dbSong.artists.map { artist -> iad1tya.echo.music.models.MediaMetadata.Artist(artist.id, artist.name) },
                                     duration = dbSong.song.duration,
-                                    thumbnailUrl = dbSong.song.thumbnailUrl
+                                    thumbnailUrl = dbSong.thumbnailUrl
                                 )
                                 val lyricsResult = lyricsHelper.getLyrics(metadata)
                                 database.query {

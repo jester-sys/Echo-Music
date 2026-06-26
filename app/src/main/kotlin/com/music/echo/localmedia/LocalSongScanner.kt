@@ -345,7 +345,9 @@ constructor(
                         ?.let { LocalDateTime.ofInstant(Instant.ofEpochSecond(it), ZoneId.systemDefault()) },
                     sizeBytes = cursor.getLong(sizeIndex).coerceAtLeast(0L),
                     mimeType = mimeType,
-                    thumbnailUrl = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, mediaId).toString(),
+                    thumbnailUrl = mediaStoreAlbumId?.takeIf { it > 0 }?.let {
+                        ContentUris.withAppendedId(AlbumArtUri, it).toString()
+                    } ?: ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, mediaId).toString(),
                 )
             }
         }
